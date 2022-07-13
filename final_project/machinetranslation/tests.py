@@ -1,12 +1,12 @@
 import unittest
-from  translator import frenchToEnglish , englishToFrench
-
-class TestF2E(unittest.TestCase):
-    def test_F2E(self):
-        self.assertEqual(frenchToEnglish("Hello"),"Hello")
+from  translator import english_to_french , french_to_english
 
 class TestE2F(unittest.TestCase):
-    def test_E2F(self):
-        self.assertEqual(englishToFrench("Bonjour"), "Bonjour")
+    def test_english_to_french(self):
+        self.assertEqual(english_to_french("Bonjour"),"Hello")
+
+class test_F2E(unittest.TestCase):
+    def test_french_to_english(self):
+        self.assertEqual(french_to_english("Hello"), "Bonjour")
 
 unittest.main()

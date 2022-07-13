@@ -15,16 +15,21 @@ language_translator = LanguageTranslatorV3(
     authenticator=authenticator
 )
 
-language_translator.set_service_url('https://api.us-east.language-translator.watson.cloud.ibm.com/instances/dafffe6c-acb7-4f34-8450-3ea60877a3d4')
+language_translator.set_service_url(
+    'https://api.us-east.language-translator.watson.cloud.ibm.com/instances/dafffe6c-acb7-4f34-8450-3ea60877a3d4')
 
-def englishToFrench(self):
-    text='Hello'
-    frenchTextTranslation = language_translator.translate(text, 
-    model_id='en-fr').get_result()
-    return frenchTextTranslation
+def english_to_french(self):
+    response = language_translator.translate(
+        text='Hello',
+        model_id='en-fr').get_result()
+    response2 = response.json.dumps(response, 
+        indent=2, ensure_ascii=False)
+    french_translation = response2.json()['translation']
+    return french_translation
 
-def frenchToEnglish(frenchText):
-    text = 'Bonjour'
-    englishTextTranslation = language_translator.translate(text,
+def french_to_english(self):
+    english_translation = language_translator.translate(
+    text='Bonjour',
     model_id='fr-en').get_result()
-    return englishTextTranslation
+    print(json.dumps(english_translation, indent=2, ensure_ascii=False))
+    return english_translation
