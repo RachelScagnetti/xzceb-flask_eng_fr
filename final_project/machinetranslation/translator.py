@@ -18,5 +18,11 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url('https://api.us-east.language-translator.watson.cloud.ibm.com')
 
 def englishToFrench(englishText):
-    french = language_translator.translate(englishText, model_id='en-fr')
-    return french
+    englishText='Test'
+    frenchTextTranslation = language_translator.translate(englishText, model_id='en-fr')
+    return frenchTextTranslation
+
+def frenchToEnglish(frenchText):
+    frenchText = 'Test'
+    englishTextTranslation = language_translator.translate(frenchText, model_id='fr-en')
+    return englishTextTranslation
