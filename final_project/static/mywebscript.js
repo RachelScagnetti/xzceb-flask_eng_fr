@@ -1,17 +1,17 @@
-let english_to_french = ()=>{
-    english_text = document.getElementById("english_text").value;
+let translateToFrench = ()=>{
+    english_text = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("french_translation").innerHTML = xhttp.responseText;
+            document.getElementById("translated_text").innerHTML = xhttp.responseText;
         }
     };
-    xhttp.open("GET", "english_to_french?french_translation"+"="+english_text, true);
+    xhttp.open("GET", "english_to_french?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 
-let french_to_english = ()=>{
+let translateToEnglish = ()=>{
     french_text = document.getElementById("french_text").value;
 
     let xhttp = new XMLHttpRequest();
