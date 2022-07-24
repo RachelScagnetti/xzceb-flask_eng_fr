@@ -1,5 +1,5 @@
 let translateToFrench = ()=>{
-    english_text = document.getElementById("textToTranslate").value;
+    textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -7,12 +7,12 @@ let translateToFrench = ()=>{
             document.getElementById("translated_text").innerHTML = xhttp.responseText;
         }
     };
-    xhttp.open("GET", "english_to_french?textToTranslate"+"="+textToTranslate, true);
+    xhttp.open("GET", "englishToFrench?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 
 let translateToEnglish = ()=>{
-    french_text = document.getElementById("textToTranslate").value;
+    textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -20,7 +20,7 @@ let translateToEnglish = ()=>{
             document.getElementById("translated_text").innerHTML = xhttp.responseText;
         }
     };
-    xhttp.open("GET", "french_to_english?textToTranslate"+"="+textToTranslate, true);
+    xhttp.open("GET", "frenchToEnglish?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 

@@ -19,18 +19,18 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(
     'https://api.us-east.language-translator.watson.cloud.ibm.com/instances/dafffe6c-acb7-4f34-8450-3ea60877a3d4')
 
-def english_to_french(english_text):
+def english_to_french(textToTranslate):
     """English to French translation"""
     response = language_translator.translate(
-        text=english_text,
+        text=textToTranslate,
         model_id='en-fr').get_result()
-    french_translation = response['translations'][0]['translation']
-    return french_translation
+    translated_text = response['translations'][0]['translation']
+    return translated_text
 
-def french_to_english(french_text):
+def french_to_english(textToTranslate):
     """French to English translation"""
     response = language_translator.translate(
-        text=french_text,
+        text=textToTranslate,
         model_id='fr-en').get_result()
-    english_translation = response['translations'][0]['translation']
-    return english_translation
+    translated_text = response['translations'][0]['translation']
+    return translated_text
